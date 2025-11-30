@@ -27,7 +27,8 @@ body {
 
 .container {
     background-color: var(--bg-color);
-    width: 30rem;
+    width: 90%;
+    max-width: 30rem;
     padding: 3rem;
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -37,12 +38,12 @@ body {
     justify-content: center;
     gap: 1.5rem;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: clamp(3rem, 10vw, 4rem);
 }
 
 
 .counter {
-    font-size: 4rem;
+    font-size: clamp(3rem, 10vw, 4rem);
     font-weight: bold;
 }
 
@@ -61,7 +62,9 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    flex: 1 1 8rem;
 }
+
 .btns button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
