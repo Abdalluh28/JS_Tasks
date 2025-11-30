@@ -62,6 +62,7 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    flex: 1 1 5rem;
 }
 .btns button:hover {
     transform: scale(1.05);
