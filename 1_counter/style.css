@@ -1,0 +1,120 @@
+:root {
+    --main-color: #4746e6;
+    --bg-color: #614de3;
+    --bg-increase: #29a846;
+    --bg-decrease: #d8394b;
+    --bg-reset: #ffc007;
+    --bg-set-maximum: #17a3b8;
+    --bg-input: #bfbebc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--main-color);
+}
+
+.page {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    background-color: var(--bg-color);
+    width: 30rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+
+.counter {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.btns button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.btns button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-increase {
+    background-color: var(--bg-increase);
+}
+
+.btn-decrease {
+    background-color: var(--bg-decrease);
+}
+
+.btn-reset {
+    background-color: var(--bg-reset);
+}
+
+.input-maximum {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    outline: none;
+}
+
+.input-maximum::placeholder {
+    color: var(--bg-input);
+}
+
+/* Chrome, Safari, Edge, Opera */
+.input-maximum::-webkit-outer-spin-button,
+.input-maximum::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+.btn-set-maximum {
+    background-color: var(--bg-set-maximum);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-set-maximum:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
