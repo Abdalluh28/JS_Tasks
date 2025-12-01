@@ -1,0 +1,140 @@
+:root {
+    --main-color: #4746e6;
+    --bg-color: #614de3;
+    --bg-previous: #29a846;
+    --bg-next: #17a3b8;
+    --bg-reset: #ffc007;
+    --bg-play: #d8394b;
+    --placeholder-input: #bfbebc;
+    --bg-add-image: #ff6a6a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--main-color);
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 700px;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.slider-image[data-visible="visible"] {
+    display: block;
+}
+
+.slider-image[data-visible="hidden"] {
+    display: none;
+}
+
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.controls button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    flex: 1 1 5rem;
+}
+
+.controls button:hover {
+    transform: scale(1.05);
+}
+
+#btn-previous {
+    background-color: var(--bg-previous);
+}
+
+#btn-next {
+    background-color: var(--bg-next);
+}
+
+#btn-reset {
+    background-color: var(--bg-reset);
+}
+
+#btn-play {
+    background-color: var(--bg-play);
+}
+
+.add-image {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.add-image input {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.add-image input::placeholder {
+    color: var(--placeholder-input);
+}
+
+.add-image button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: var(--bg-add-image);
+    transition: all 0.3s ease-in-out;
+}
+
+.add-image button:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="slider-container">
+        <div class="slider">
+            <img class="slider-image" data-visible="visible" src="./assets/Killua Zoldyck.jpeg" alt="Slider Image">
+            <img class="slider-image" data-visible="hidden" src="./assets/Levi cleaning.jpeg" alt="Slider Image">
+            <img class="slider-image" data-visible="hidden" src="./assets/Gojo Satoru .jpeg" alt="Slider Image">
+            <img class="slider-image" data-visible="hidden" src="./assets/Eren and Grisha.jpeg" alt="Slider Image">
+            <img class="slider-image" data-visible="hidden" src="./assets/Tatakae_ Levi.jpeg" alt="Slider Image">
+        </div>
+        <div class="controls">
+            <button id="btn-previous">Previous</button>
+            <button id="btn-next">Next</button>
+            <button id="btn-reset">Reset</button>
+            <button id="btn-play" data-play="1">Play</button>
+        </div>
+        <div class="add-image">
+            <input type="text" id="image-url" placeholder="Enter image URL">
+            <button id="btn-add-image">Add Image</button>
+        </div>
+    </div>
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
