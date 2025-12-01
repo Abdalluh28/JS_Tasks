@@ -1,0 +1,172 @@
+:root {
+    --bg-color: black;
+    --input-placeholder: #777777;
+    --input-border: #3E1671;
+    --btn-add: #9e79cc;
+    --bg-task: #14101b;
+    --done-task: #78CFB0;
+    --todo-task: #9e79cc;
+    --btn-delete: #9e79cc;
+    --btn-delete-hover: #3E1671;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+
+body {
+    background: var(--bg-color);
+    display: grid;
+    place-items: center;
+    padding: 20px 0;
+    min-height: 100vh;
+}
+
+.container {
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.add {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.add input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.add input:focus {
+    border-color: var(--btn-add);
+}
+
+.add input::placeholder {
+    color: var(--input-placeholder);
+}
+
+.add button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background: var(--btn-add);
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add button:hover {
+    background: var(--input-border);
+}
+
+
+.todo,
+.done {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.list-header {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    list-style-type: none;
+}
+
+.no-tasks {
+    text-align: center;
+    color: var(--input-placeholder);
+    font-style: italic;
+    padding: 10px 0;
+}
+
+.no-tasks[data-visible="visible"] {
+    display: block;
+}
+
+.no-tasks[data-visible="hidden"] {
+    display: none;
+}
+
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: var(--bg-task);
+    transition: all 0.2s ease;
+    cursor: grab;
+}
+
+.task span {
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+.todo-task span {
+    color: var(--todo-task);
+}
+
+.done-task span {
+    color: var(--done-task);
+    text-decoration: line-through;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 5px;
+}
+
+.btn i {
+    color: var(--todo-task);
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+.btn:hover i {
+    color: var(--btn-delete-hover);
+}
