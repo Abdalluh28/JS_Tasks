@@ -3,7 +3,7 @@ const srcs = [
     './assets/5.gif', './assets/2.gif', './assets/6.gif', './assets/4.gif',
     './assets/3.gif', './assets/5.gif', './assets/6.gif', './assets/4.gif',
 ];
-let moonImage = './assets/moon.gif';
+let moonImage = './assets/Moon.gif';
 
 let images = document.querySelectorAll('.memory-game-image')
 
