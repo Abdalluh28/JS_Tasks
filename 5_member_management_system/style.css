@@ -1,0 +1,261 @@
+:root {
+    --bg-body: #000;
+    --bg-container: #1a1a2e;
+    --bg-delete: #e7030c;
+    --bg-delete-hover: #b60000;
+    --bg-create: #1b5cf7;
+    --bg-create-hover: #154bb5;
+    --bg-view: #1748bb;
+    --bg-view-hover: #154ab598;
+    --table-header: #1b5cf7;
+    --bg-edit: #24b053;
+    --bg-edit-hover: #1a8f3dad;
+    --bg-placeholder: #6e798b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: var(--bg-container);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #333;
+}
+
+/* Start Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+.header p {
+    font-size: 24px;
+    color: var(--bg-view);
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.header-btn {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.create-member {
+    background-color: var(--bg-create);
+}
+
+.create-member:hover {
+    background-color: var(--bg-create-hover);
+    box-shadow: 0 0 5px var(--bg-create-hover);
+}
+
+.remove-members {
+    background-color: var(--bg-delete);
+}
+
+.remove-members:hover {
+    background-color: var(--bg-delete-hover);
+    box-shadow: 0 0 5px var(--bg-delete-hover);
+}
+
+/* End Header Section */
+
+
+/* Start Filters Section */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.filter-item {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+    border: 1px solid var(--bg-view);
+    flex: 1 1 200px;
+}
+
+.filter-item::placeholder {
+    color: var(--bg-placeholder);
+}
+
+.filter-item:hover {
+    box-shadow: 0 0 5px var(--bg-view);
+}
+
+.filter-item:focus {
+    box-shadow: 0 0 8px var(--bg-view);
+    border: 1px solid var(--bg-view);
+}
+
+.search-input {
+    cursor: text;
+}
+
+.filter-item>input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    outline: none;
+}
+
+.filter-item>label {
+    cursor: pointer;
+}
+
+/* End Filters Section */
+
+
+/* Start Members Table Section */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.table-container[data-visible="visible"] {
+    display: block;
+}
+
+.table-container[data-visible="hidden"] {
+    display: none;
+}
+
+.members-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.members-table thead {
+    color: var(--table-header);
+}
+
+.members-table th,
+.members-table td {
+    padding: 18px 15px;
+    border-bottom: 1px solid hsla(0, 0%, 20%, 0.653);
+}
+
+.member-row:hover {
+    background-color: hsla(222, 76%, 29%, 0.112);
+}
+
+.member-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.member-action-button {
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    background: transparent;
+}
+
+.view-member {
+    color: var(--bg-view);
+}
+
+.view-member:hover {
+    color: var(--bg-view-hover);
+}
+
+.edit-member {
+    color: var(--bg-edit);
+}
+
+.edit-member:hover {
+    color: var(--bg-edit-hover);
+}
+
+.delete-member {
+    color: var(--bg-delete);
+}
+
+.delete-member:hover {
+    color: var(--bg-delete-hover);
+}
+
+/* End Members Table Section */
+
+
+/* Start footer Section */
+.footer {
+    margin-top: 30px;
+    color: var(--bg-placeholder);
+    font-size: 14px;
+}
+
+.footer[data-visible="visible"] {
+    display: block;
+}
+
+.footer[data-visible="hidden"] {
+    display: none;
+}
+
+
+.no-members-message[data-visible="visible"] {
+    display: block;
+}
+
+.no-members-message[data-visible="hidden"] {
+    display: none;
+}

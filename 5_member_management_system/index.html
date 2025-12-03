@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3198d18499.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <p>All Members</p>
+            <div class="header-buttons">
+                <button class="header-btn create-member">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Create Member</span>
+                </button>
+                <button class="header-btn remove-members">
+                    <i class="fa-solid fa-trash"></i>
+                    <span>Remove All</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="filters">
+            <input type="text" class="filter-item search-input" placeholder="Search members...">
+            <select class="filter-item government-filter" name="government-filter" title="government-filter">
+                <option value="all">All Governments</option>
+                <option value="cairo">Cairo</option>
+                <option value="benisuef">Benisuef</option>
+                <option value="alexandria">Alexandria</option>
+            </select>
+            <select class="filter-item marital-status-filter" name="marital-status-filter"
+                title="marital-status-filter">
+                <option value="all">All</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+            </select>
+            <button class="filter-item" id="part-time-filter-button">
+                <input type="checkbox" class="part-time-filter" title="part-time" id="part-time-filter">
+                <label for="part-time-filter">Part Time Only</label>
+            </button>
+        </div>
+
+
+        <!-- members table -->
+        <div class="table-container" data-visible="visible">
+            <table class="members-table">
+                <thead id="members-header">
+                    <tr>
+                        <th class="table-haeder-name">Name</th>
+                        <th class="table-haeder-phone">Phone</th>
+                        <th class="table-haeder-government">Government</th>
+                        <th class="table-haeder-created-at">Created At</th>
+                        <th class="table-haeder-updated-at">Updated At</th>
+                        <th class="table-haeder-actions">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="members-body">
+                    <!-- Member rows will be dynamically inserted here -->
+                    <!-- example -->
+                    <tr class="member-row">
+                        <td class="member-name">John Doe</td>
+                        <td class="member-phone">123-456-7890</td>
+                        <td class="member-government">Cairo</td>
+                        <td class="member-created-at">2024-01-01</td>
+                        <td class="member-updated-at">2024-01-02</td>
+                        <td class="member-actions">
+                            <button class="member-action-button view-member" data-member-id="1" title="view member">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                            <button class="member-action-button edit-member" data-member-id="1" title="edit member">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button class="member-action-button delete-member" data-member-id="1" title="delete member">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="footer" data-visible="visible">
+            <p>
+                showing
+                <span class="displayed-count">0</span>
+                of
+                <span class="total-count">0</span>
+                members
+            </p>
+        </footer>
+
+        <div class="no-members-message" data-visible="hidden">
+            <p>No members found.</p>
+        </div>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
