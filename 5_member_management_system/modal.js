@@ -22,11 +22,47 @@ export const openModal = async (modal, url) => {
         });
     }
 
+    const form = document.querySelector('.create-edit-member-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            handleSubmit(e)
+            closeModal(modal);
+        });
+    }
 }
 
 const closeModal = (modal) => {
     modal.style.display = 'none';
 }
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    console.log(data)
+
+    const newMember = {
+        name: data.firstName + ' ' + data.lastName,
+        email: data.email,
+        birthdate: data.birthdate,
+        matrialStatus: data.matrialStatus,
+        phone: data.phone,
+        government: data.government,
+        partTime: data.partTime === 'on' ? true : false,
+        createdAt: new Date().toLocaleString(),
+        updatedAt: new Date().toLocaleString(),
+    }
+
+    let members = localStorage.getItem('members') || '[]';
+    members = JSON.parse(members);
+
+    members.push(newMember);
+    localStorage.setItem('members', JSON.stringify(members));
+
+    createMemberRow(newMember);
+}
+
 
 export const modalOutsideClick = (modal) => {
     window.addEventListener('click', e => {
