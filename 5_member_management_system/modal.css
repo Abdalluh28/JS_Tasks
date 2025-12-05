@@ -1,0 +1,166 @@
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0; 
+    background-color: rgba(0,0,0,0.5);
+    overflow: auto; 
+    padding: 20px;  
+    box-sizing: border-box;
+}
+
+.modal-content {
+    background-color: var(--bg-container);
+    padding: 20px;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    max-height: 90vh;
+    overflow-y: auto;   
+}
+
+
+
+/* Start Create/Edit Member Form Styles */
+.create-edit-member-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-header {
+    display: flex;
+    gap: 10px;
+}
+
+.form-header h2 {
+    margin: 0;
+    color: var(--bg-view);
+}
+
+.form-header .close-modal-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: var(--bg-view);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-header .close-modal-btn:hover {
+    color: var(--bg-create);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: black;
+    border: 1px solid var(--bg-view);
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group select::placeholder {
+    color: var(--bg-placeholder);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--bg-create);
+    box-shadow: 0 0 5px var(--bg-create);
+}
+
+.birthdate-group {
+    position: relative;
+}
+
+.birthdate-group i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(20%);
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--bg-placeholder);
+}
+
+.birthdate-group i:hover {
+    color: var(--bg-create);
+}
+
+.birthdate-group input {
+    padding-right: 30px;
+    color: white;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group select {
+    color: white;
+}
+
+.part-time-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.part-time-group input {
+    outline: none;
+    width: 15px;
+    height: 15px;
+    margin-bottom: 2px;
+}
+
+.form-actions {
+    display: flex;
+    margin-top: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.form-actions-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bg-create);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    flex: 1 1 150px;
+}
+
+.submit-btn:hover {
+    background-color: var(--bg-create-hover);
+    box-shadow: 0 0 5px var(--bg-create-hover);
+}
+
+.close-modal-btn {
+    background-color: black;
+    border: 1px solid var(--bg-create);
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.close-modal-btn:hover {
+    background-color: var(--bg-cancel-hover);
+    box-shadow: 0 0 5px var(--bg-cancel-hover);
+}

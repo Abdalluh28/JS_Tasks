@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form class="create-edit-member-form">
+        <div class="form-header">
+            <button type="button" class="close-modal-btn" title="close modal">
+                <i class="fa-solid fa-arrow-left-long"></i>
+            </button>
+            <h2 class="form-title">Create Member</h2>
+        </div>
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter First Name" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number" required>
+        </div>
+        <div class="form-group birthdate-group">
+            <label for="birthdate">Birthdate:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+            <i class="fa-solid fa-calendar"></i>
+        </div>
+        <div class="form-group">
+            <p class="form-group">Matrial Status</p>
+            <div class="radio-group">
+                <div class="radio-item">
+                    <input type="radio" name="marital-status" value="single" id="single" required>
+                    <label for="single">Single</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" name="marital-status" value="married" id="married" required>
+                    <label for="married">Married</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="government">Government:</label>
+            <select id="government" name="government" required>
+                <option value="">Select Government</option>
+                <option value="cairo">Cairo</option>
+                <option value="benisuef">Benisuef</option>
+                <option value="alexandria">Alexandria</option>
+            </select>
+        </div>
+        <div class="form-group part-time-group">
+            <input type="checkbox" id="part-time" name="part-time">
+            <label for="part-time">Part Time</label>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="form-actions-btn submit-btn">Create Member</button>
+            <button type="button" class="form-actions-btn close-modal-btn">Show All Members</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

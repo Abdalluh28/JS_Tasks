@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Member Management System</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
     <script src="https://kit.fontawesome.com/3198d18499.js" crossorigin="anonymous"></script>
 </head>
 
@@ -15,7 +16,7 @@
         <div class="header">
             <p>All Members</p>
             <div class="header-buttons">
-                <button class="header-btn create-member">
+                <button class="header-btn create-member open-create-member-modal">
                     <i class="fa-solid fa-plus"></i>
                     <span>Create Member</span>
                 </button>
@@ -23,6 +24,12 @@
                     <i class="fa-solid fa-trash"></i>
                     <span>Remove All</span>
                 </button>
+            </div>
+        </div>
+
+        <div class="modal">
+            <div class="modal-content">
+                <!-- Modal content will be added dynamically using fetch -->
             </div>
         </div>
 
@@ -62,25 +69,6 @@
                 </thead>
                 <tbody class="members-body">
                     <!-- Member rows will be dynamically inserted here -->
-                    <!-- example -->
-                    <tr class="member-row">
-                        <td class="member-name">John Doe</td>
-                        <td class="member-phone">123-456-7890</td>
-                        <td class="member-government">Cairo</td>
-                        <td class="member-created-at">2024-01-01</td>
-                        <td class="member-updated-at">2024-01-02</td>
-                        <td class="member-actions">
-                            <button class="member-action-button view-member" data-member-id="1" title="view member">
-                                <i class="fa-solid fa-eye"></i>
-                            </button>
-                            <button class="member-action-button edit-member" data-member-id="1" title="edit member">
-                                <i class="fa-solid fa-pen"></i>
-                            </button>
-                            <button class="member-action-button delete-member" data-member-id="1" title="delete member">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </div>
@@ -101,7 +89,7 @@
     </div>
 
 
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 
 </html>
