@@ -3,10 +3,10 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    inset: 0; 
-    background-color: rgba(0,0,0,0.5);
-    overflow: auto; 
-    padding: 20px;  
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -17,7 +17,7 @@
     max-width: 700px;
     border-radius: 10px;
     max-height: 90vh;
-    overflow-y: auto;   
+    overflow-y: auto;
 }
 
 
@@ -71,6 +71,7 @@
     background-color: black;
     border: 1px solid var(--bg-view);
     outline: none;
+    color: white;
 }
 
 .form-group input::placeholder,
@@ -82,6 +83,13 @@
 .form-group select:focus {
     border-color: var(--bg-create);
     box-shadow: 0 0 5px var(--bg-create);
+}
+
+.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-top: 5px;
+    display: none;
 }
 
 .birthdate-group {
@@ -164,3 +172,5 @@
     background-color: var(--bg-cancel-hover);
     box-shadow: 0 0 5px var(--bg-cancel-hover);
 }
+
+/* End Create/Edit Member Form Styles */

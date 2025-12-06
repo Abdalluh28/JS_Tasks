@@ -18,46 +18,53 @@
         </div>
         <div class="form-group">
             <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Enter First Name" required>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter First Name">
+            <p class="first-name-error error-message"></p>
         </div>
         <div class="form-group">
             <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name" required>
+            <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name">
+            <p class="last-name-error error-message"></p>
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            <input type="email" id="email" name="email" placeholder="Enter Email">
+            <p class="email-error error-message"></p>
         </div>
         <div class="form-group">
             <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number" required>
+            <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number">
+            <p class="phone-error error-message"></p>
         </div>
         <div class="form-group birthdate-group">
             <label for="birthdate">Birthdate:</label>
-            <input type="date" id="birthdate" name="birthdate" required>
+            <input type="date" id="birthdate" name="birthdate">
             <i class="fa-solid fa-calendar"></i>
+            <p class="birthdate-error error-message"></p>
         </div>
         <div class="form-group">
             <p class="form-group">Matrial Status</p>
             <div class="radio-group">
                 <div class="radio-item">
-                    <input type="radio" name="marital-status" value="single" id="single" required>
+                    <input type="radio" name="maritalStatus" value="single" id="single">
                     <label for="single">Single</label>
                 </div>
                 <div class="radio-item">
-                    <input type="radio" name="marital-status" value="married" id="married" required>
+                    <input type="radio" name="maritalStatus" value="married" id="married">
                     <label for="married">Married</label>
                 </div>
             </div>
+            <p class="marital-status-error error-message"></p>
         </div>
         <div class="form-group">
             <label for="government">Government:</label>
-            <select id="government" name="government" required>
+            <select id="government" name="government">
                 <option value="">Select Government</option>
                 <option value="cairo">Cairo</option>
                 <option value="benisuef">Benisuef</option>
                 <option value="alexandria">Alexandria</option>
             </select>
+            <p class="government-error error-message"></p>
         </div>
         <div class="form-group part-time-group">
             <input type="checkbox" id="part-time" name="part-time">
