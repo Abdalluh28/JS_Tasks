@@ -20,13 +20,13 @@ export const createMemberRow = (member) => {
         <td class="member-created-at">${member.createdAt}</td>
         <td class="member-updated-at">${member.updatedAt}</td>
         <td class="member-actions">
-            <button class="member-action-button view-member" data-member-id="1" title="view member">
+            <button class="member-action-button view-member" data-member-id=${member.id} title="view member">
                 <i class="fa-solid fa-eye"></i>
             </button>
-            <button class="member-action-button edit-member" data-member-id="1" title="edit member">
+            <button class="member-action-button edit-member" data-member-id=${member.id} title="edit member">
                 <i class="fa-solid fa-pen"></i>
             </button>
-            <button class="member-action-button delete-member" data-member-id="1" title="delete member">
+            <button class="member-action-button delete-member" data-member-id=${member.id} title="delete member">
                 <i class="fa-solid fa-trash"></i>
             </button>
         </td>
@@ -37,6 +37,15 @@ export const createMemberRow = (member) => {
 
 let members = localStorage.getItem('members') || '[]';
 members = JSON.parse(members);
+if (members.length == 0) {
+    document.querySelector('.no-members-message').setAttribute('data-visible', 'visible');
+    document.querySelector('.table-container').setAttribute('data-visible', 'hidden');
+    document.querySelector('.footer').setAttribute('data-visible', 'hidden');
+} else {
+    document.querySelector('.no-members-message').setAttribute('data-visible', 'hidden');
+    document.querySelector('.table-container').setAttribute('data-visible', 'visible');
+    document.querySelector('.footer').setAttribute('data-visible', 'visible');
+}
 
 members.forEach(member => {
     createMemberRow(member);
