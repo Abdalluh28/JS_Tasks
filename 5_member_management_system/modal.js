@@ -151,5 +151,3 @@ export const modalOutsideClick = (modal) => {
     });
 }
 
-
-// delete modal is done, but cannot open after adding a new member directly, bug - need to reload the page
