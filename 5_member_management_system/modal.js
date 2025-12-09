@@ -1,6 +1,6 @@
 import { createMemberRow } from "./index.js";
 
-export const openModal = async (modal, url) => {
+export const openModal = async (modal, url, id) => {
     modal.style.display = 'flex';
     const modalContent = modal.querySelector('.modal-content');
 
@@ -29,6 +29,15 @@ export const openModal = async (modal, url) => {
     const form = modalContent.querySelector('.create-edit-member-form');
     if (form) {
         form.addEventListener('submit', handleSubmit.bind(null, modal, form));
+    }
+
+    // delete member
+    if (id) {
+        const members = JSON.parse(localStorage.getItem('members') || '[]');
+        const member = members.find(member => member.id == id);
+        document.querySelector('.delete-member-modal-content p').textContent = `Are you sure you want to delete ${member.name}?`;
+        const deleteMemberBtn = modalContent.querySelector('.delete-member-modal-delete-btn');
+        deleteMemberBtn.addEventListener('click', () => handleDeleteMember(modal, members, id));
     }
 }
 
@@ -121,9 +130,26 @@ const handleSubmit = (modal, form, e) => {
     document.querySelector('.footer').setAttribute('data-visible', 'visible');
 }
 
+
+// Handle delete member
+const handleDeleteMember = (modal, members, id) => {
+    members = members.filter(member => member.id != id);
+    localStorage.setItem('members', JSON.stringify(members));
+    closeModal(modal);
+    document.querySelector('.members-body').removeChild(document.querySelector(`.member-row[data-member-id="${id}"]`));
+    if (members.length == 0) {
+        document.querySelector('.no-members-message').setAttribute('data-visible', 'visible');
+        document.querySelector('.table-container').setAttribute('data-visible', 'hidden');
+        document.querySelector('.footer').setAttribute('data-visible', 'hidden');
+    }
+}
+
 // Close modal if clicking outside
 export const modalOutsideClick = (modal) => {
     window.addEventListener('click', e => {
         if (e.target === modal) closeModal(modal);
     });
 }
+
+
+// delete modal is done, but cannot open after adding a new member directly, bug - need to reload the page

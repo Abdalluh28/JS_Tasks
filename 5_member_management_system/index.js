@@ -8,11 +8,11 @@ modalBtn.addEventListener('click', () => openModal(modal, './createEditMember/cr
 modalOutsideClick(modal);
 
 
-
 export const createMemberRow = (member) => {
     const tableBody = document.querySelector('.members-body')
     let row = document.createElement('tr');
     row.classList.add('member-row');
+    row.setAttribute('data-member-id', member.id);
     row.innerHTML = `
         <td class="member-name">${member.name}</td>
         <td class="member-phone">${member.phone}</td>
@@ -49,4 +49,14 @@ if (members.length == 0) {
 
 members.forEach(member => {
     createMemberRow(member);
+})
+
+
+// Delete member
+document.querySelector('.members-body').addEventListener('click', (e) => {
+    const btn = e.target.closest('.delete-member');
+    if (!btn) return;
+
+    const id = btn.getAttribute('data-member-id');
+    openModal(modal, './deleteMember/delete_member.html', id);
 })

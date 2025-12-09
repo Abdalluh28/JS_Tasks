@@ -18,6 +18,7 @@
     border-radius: 10px;
     max-height: 90vh;
     overflow-y: auto;
+    position: relative;
 }
 
 
@@ -174,3 +175,90 @@
 }
 
 /* End Create/Edit Member Form Styles */
+
+
+/* Start Delete Member Modal Styles */
+
+.delete-member-modal-header-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--bg-placeholder);
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.delete-member-modal-header-close:hover {
+    color: var(--bg-create);
+}
+
+.delete-member-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.delete-member-modal-content p {
+    margin: 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.delete-member-modal-content span {
+    color: var(--bg-placeholder);
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.delete-member-modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 400px;
+}
+
+.delete-member-modal-actions button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    flex: 1 1 150px;
+}
+
+.delete-member-modal-cancel-btn {
+    background-color: var(--bg-create);
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.delete-member-modal-cancel-btn:hover {
+    background-color: var(--bg-create-hover);
+    box-shadow: 0 0 5px var(--bg-create-hover);
+}
+
+.delete-member-modal-delete-btn {
+    background-color: var(--bg-delete);
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.delete-member-modal-delete-btn:hover {
+    background-color: var(--bg-delete-hover);
+    box-shadow: 0 0 5px var(--bg-delete-hover);
+}
+
+/* End Delete Member Modal Styles */

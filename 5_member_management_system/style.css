@@ -77,6 +77,10 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+.header-btn i {
+    margin-top: 4px;
+}
+
 @media screen and (max-width: 400px) {
     .header-btn {
         flex: 1 1 200px;
@@ -151,6 +155,7 @@ body {
     width: 16px;
     height: 16px;
     outline: none;
+    cursor: pointer;
 }
 
 .filter-item>label {
